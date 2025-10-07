@@ -59,7 +59,22 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.horizontal-container {
+  width: 100%;
+  overflow-x: scroll; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents items from wrapping to the next line */
+}
 
+.scrollable-content {
+  display: flex; /* Arranges items horizontally */
+}
+.item {
+      display: inline-block; /* Or use flex-shrink: 0; on flex items */
+      width: 200px; /* Example width for each item */
+      margin-right: 10px;
+      background-color: lightblue;
+      padding: 20px;
+    }
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
