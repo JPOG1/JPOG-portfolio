@@ -16,10 +16,14 @@ import { FaAngleDoubleDown, FaInstagram, FaMailBulk } from "react-icons/fa";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Portfolio from "./App1";
+import me from "../src/images/Gemini_Generated_Image_g23asig23asig23a.png";
 import note from "../src/images/Screenshot From 2025-09-18 13-40-42.png";
 import notep from "../src/images/pius.jpg";
 import church from "../src/images/mission.png";
 import { PiGithubLogoBold } from "react-icons/pi";
+import CircularGallery from "./CircularGallery";
+import ElectricBorder from './ElectricBorder'
+import GlitchText from './GLitchText';
 
 function Box() {
   return (
@@ -52,7 +56,7 @@ function App() {
 
         {/* Main Hero */}
         <div className="w-full h-screen flex flex-col sm:flex-row pl-0">
-          <div className="h-full w-screen relative flex justify-center items-center sm:w-[50%]">
+          <div className="h-full w-screen relative flex justify-center items-center lg:w-[50%]">
             <motion.div
               initial={{ x: -200, opacity: 0.5 }}
               animate={{ x: 0, opacity: 1 }}
@@ -66,6 +70,7 @@ function App() {
                 className="text-5xl sm:text-6xl font-bold mb-6 text-sky-400 text-center"
               >
                 Hi, I’m JOHN PAUL OGIRIMA
+                
               </motion.h1>
 
               <motion.p
@@ -75,8 +80,8 @@ function App() {
                 className="text-lg max-w-2xl text-center text-slate-300"
               >
                 A passionate full-stack, mobile, Python and C developer who
-                loves creating modern web & mobile applications.
-                and also a graphic designer
+                loves creating modern web & mobile applications. and also a
+                graphic designer
               </motion.p>
               <motion.a
                 className="bg-slate-500 text-3xl px-10 py-3 mt-10 rounded rounded-[90px] transform pointer select-none tr hover:bg-cyan-400 hover:text-grey"
@@ -88,8 +93,26 @@ function App() {
               </motion.a>
             </motion.div>
           </div>
-          <div className=" sm:visible sm:h-screen sm:w-[50%] sm:bg-black opacity-5"></div>
+<ElectricBorder
+  color="#7df9ff"
+  speed={1}
+  chaos={0.5}
+  thickness={2}
+            style={{ borderRadius: 16 }}
+            className="ml-44"
+>
+  <div>
+          <motion.div
+            className=" max-lg:hidden  lg:h-screen lg:w-[100%] border justify-center items-center flex overflow-hidden sm:visible  "
+            initial={{ opacity: 0.5, y: -1000 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2.2, delay: 1.5 }}
+          >
+            <img src={me} className=" min-w-fit min-h-fit" resizeMode="cover" />
+          </motion.div>
         </div>
+</ElectricBorder>
+  </div>
       </section>
 
       <Portfolio />
@@ -160,22 +183,13 @@ function App() {
       </section>
 
       <section className=" flex-nowrap item-center overflow-x-auto h-screen w-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black items-center flex-col">
-        <div className="flex flex-nowrap gap-8 px-10 item-center ">
-          <div className="item mt-32 sm:mt-0 w-96 h-96 flex-shrink-0 bg-slate-950/70 sm:w-11/12 sm:h-fit">
-            <img src={note} className="w-full" />
-            <p className="text-3xl text-pretty font-black text-sky-500">NOTEPAD</p>
-            <p className=" font-bold font-serif text-sky-300">a note app that help with keeping of what to BUY, ROUTINE, GOALS, GUIDANCE AND IDEA. with upcoming features of being able to access your notes anywhere, with any kind of device</p>
-          </div>
-          <div className=" flex flex-col w-96 item-center justify-center h-96 mt-32 flex-shrink-0 bg-slate-950/70 sm:w-11/12 sm:h-fit">
-            <img src={notep} className="w-[40%] align-middle sm:ml-[25%]"  />
-            <p className="text-3xl text-pretty font-black text-sky-500">PRODUCT DESIGN</p>
-            <p className=" font-bold font-serif text-sky-300">A company flier for a fashion industry</p>
-          </div>
-          <div className="item w-96 h-96 mt-32 flex-shrink-0 bg-slate-950/70">
-            <img src={church} className="w-[50%] ml-[90px]" />
-            <p className="text-3xl text-pretty font-black text-sky-500">CHURCH FLIER</p>
-            <p className=" font-bold font-serif text-sky-300">a design for orphanage visitation, did for REDDEMED CHRISTIAN FELLOWSHIP PRINCE ABUBAKAR AUDU UNIVERSITY</p>
-          </div>
+        <div style={{ height: "600px", position: "relative" }}>
+          <CircularGallery
+            bend={3}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            scrollEase={0.02}
+          />
         </div>
       </section>
       {/* Contact Section */}
@@ -186,38 +200,50 @@ function App() {
       >
         <h2 className="text-4xl font-bold mb-10 text-sky-400">Contact Me</h2>
         <div className="flex flex-col space-y-6 sm:flex-row sm:gap-10 sm:flex-wrap justify-center align-middle items-center">
-        <a className=" pointer-events-auto select-none" href="https://x.com/JPCODES_Jp">
-          <div className="flex items-center justify-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
-            <FaTwitter size={70} className="text-sky-400" />
-            <p>Twitter</p> 
-          </div>
+          <a
+            className=" pointer-events-auto select-none"
+            href="https://x.com/JPCODES_Jp"
+          >
+            <div className="flex items-center justify-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
+              <FaTwitter size={70} className="text-sky-400" />
+              <p>Twitter</p>
+            </div>
           </a>
-          <a className="pointer-auto select-none" href="https://web.facebook.com/paulogirima.john">
-
-          <div className="flex items-center justify-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
-            <FaFacebookF size={70} className="text-sky-400" />
-            <p>Facebook</p>
-          </div>
+          <a
+            className="pointer-auto select-none"
+            href="https://web.facebook.com/paulogirima.john"
+          >
+            <div className="flex items-center justify-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
+              <FaFacebookF size={70} className="text-sky-400" />
+              <p>Facebook</p>
+            </div>
           </a>
-          <a className="pointer-auto select-none " href="mailto:johnpaulogirima156@gmailcom" >
-            
-          <div className="flex  justify-center items-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
-            <FaMailBulk size={70} className="text-sky-400" />
-            <p>Email</p>
-          </div>
+          <a
+            className="pointer-auto select-none "
+            href="mailto:johnpaulogirima156@gmailcom"
+          >
+            <div className="flex  justify-center items-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
+              <FaMailBulk size={70} className="text-sky-400" />
+              <p>Email</p>
+            </div>
           </a>
-          <a className="pointer-auto select-none" href="https://www.instagram.com/jp_tech_neta/">
-          <div className="flex  justify-center items-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
-            <FaInstagram size={70} className="text-sky-400" />
-            <p>Instagram</p>
-          </div>
+          <a
+            className="pointer-auto select-none"
+            href="https://www.instagram.com/jp_tech_neta/"
+          >
+            <div className="flex  justify-center items-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
+              <FaInstagram size={70} className="text-sky-400" />
+              <p>Instagram</p>
+            </div>
           </a>
-          <a className="pointer-events-auto select-none" href="https://github.com/JPOG1">
-
-          <div className="flex  justify-center items-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
-            <PiGithubLogoBold size={70} className="text-sky-400" />
-            <p>Github</p>
-          </div>
+          <a
+            className="pointer-events-auto select-none"
+            href="https://github.com/JPOG1"
+          >
+            <div className="flex  justify-center items-center space-x-4 sm:p-5 sm:w-[500px] sm:border sm:border-sky-400 sm:rounded-2xl">
+              <PiGithubLogoBold size={70} className="text-sky-400" />
+              <p>Github</p>
+            </div>
           </a>
         </div>
       </section>

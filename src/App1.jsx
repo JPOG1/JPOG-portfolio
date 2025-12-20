@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import me from '../src/images/Gemini_Generated_Image_g23asig23asig23a.png'
 
 import React, { Component } from "react";
 
@@ -59,12 +60,12 @@ export default function Portfolio() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="md:w-1/2 flex justify-center mt-10 md:mt-0 sm:hidden"
+          className="md:w-1/2 flex justify-center mt-10 md:mt-0 lg:hidden"
         >
           <img
-            src="/profile.png"
+            src={me}
             alt="profile"
-            className="rounded-2xl shadow-lg shadow-sky-500/20 max-w-sm border border-sky-400/30 sm:hidden"
+            className="rounded-2xl shadow-lg shadow-sky-500/20 max-w-sm border border-sky-400/30 lg:hidden"
           />
         </motion.div>
       </section>
